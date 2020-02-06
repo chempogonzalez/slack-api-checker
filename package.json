@@ -1,0 +1,112 @@
+{
+  "name": "postman-api-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node ./dist/index.js ENV=production",
+    "start:watch": "nodemon",
+    "start:develop": "node --inspect=5858 -r ts-node/register ./src/*.ts",
+    "build": "tsc",
+    "test": "jest --silent --verbose",
+    "test:pre-commit": "jest --silent",
+    "lint": "eslint 'src/**/*'",
+    "lint:copy-paste": "jscpd ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "author": "chempogonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chempogonzalez/slack-api-checker/issues"
+  },
+  "homepage": "https://github.com/chempogonzalez/slack-api-checker#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "newman": "^4.5.7",
+    "newman-reporter-html": "^1.0.5",
+    "newman-reporter-htmlextra": "^1.10.1",
+    "npm": "^6.12.0",
+    "npm-check-updates": "^3.2.1",
+    "pretty-console-colors": "^1.1.1",
+    "slackbots": "^1.2.0",
+    "typescript": "^3.6.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.11.1",
+    "@types/supertest": "^2.0.5",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "24.9.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "jscpd": "^2.0.16",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm run start:develop",
+    "ext": "ts"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": [
+      ".spec.ts$",
+      ".spec.js$"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "jscpd": {
+    "mode": "mild",
+    "reporters": [
+      "console",
+      "time"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "**/__mocks__/**",
+      "**/build/**",
+      "**/public/**",
+      "**/package.json",
+      "**/tsconfig.json",
+      "doc",
+      "dist",
+      "example"
+    ],
+    "absolute": true,
+    "gitignore": true
+  }
+}
