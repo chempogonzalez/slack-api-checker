@@ -1,5 +1,7 @@
 # Newman - SlackBot application [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
+![Slack-logo](assets/logo-slack.png)
+
 ## Description
 
 This application is a tool which allows you to send, through a message/report, all the information about your Postman collection tests.
