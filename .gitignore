@@ -25,8 +25,7 @@ dist/**/*
 newman/*
 
 # Assets folder
-assets/*
-!assets/logo-slack.png
+assets/*.json
 
 
 # Package lock

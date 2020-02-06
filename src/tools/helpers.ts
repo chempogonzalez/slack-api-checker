@@ -9,7 +9,6 @@ export default class Helpers {
         || !process.env.SLACK_BOT_TOKEN
         || !process.env.SLACK_BOT_NAME
         || !process.env.SLACK_BOT_ID
-        || !process.env.SLACK_CHANNEL
         || !process.env.PROJECT_NAME) {
       throw Error('All the environment variables specified in the .env.schema file must to be filled in the .env file');
     }
