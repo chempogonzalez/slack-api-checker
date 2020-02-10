@@ -80,7 +80,7 @@ To run the unit tests for this project you will need to execute the following co
 $npm run test
 ```
 
-To run the linters for this proyecto you will need to execute the following command:
+To run the linters for this project you will need to execute the following command:
 
 ```bash
 # ESLint linter
@@ -98,13 +98,10 @@ $npm run lint:copy-paste
 |   └── ...                 # ...
 |   |
 ├── doc
-|   ├── qac 🔰              # Quality Assurance Code.
-|   |   └── ...             # ...
-|   |
-|   ├── source 📖           # Source Documentation.
-|   |   └── ...             # ...
-|   |
-├── .env 🔌                 # Environment file to configure env variables.
+|   └── qac 🔰              # Quality Assurance Code.
+|       └── ...             # ...
+|
+├── .env 🔌                 # Environment file to setup env variables.
 |   |   └── ...             # ...
 |   |
 ├── src
