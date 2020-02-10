@@ -18,6 +18,8 @@ class Bot {
   /**
    * @description Executes callback code inside 'open' Event.
    *              - Event: websocket connection is open and ready to communicate.
+   *
+   * @returns {void}
    */
   public readonly onOpen = (cb: Function): void => {
     if (this._bot) {
@@ -32,6 +34,8 @@ class Bot {
   /**
    * @description Executes callback code inside 'start' Event.
    *              - Event: event fired, when Real Time Messaging API is started (via websocket).
+   *
+   * @returns {void}
    */
   public readonly onStart = (cb: Function): void => {
     if (this._bot) {
@@ -46,6 +50,8 @@ class Bot {
   /**
    * @description Executes callback code inside 'message' Event.
    *              - Event: event fired, when something happens in Slack.
+   *
+   * @returns {void}
    */
   public readonly onMessageReceived = (cb: Function): void => {
     if (this._bot) {
@@ -60,6 +66,8 @@ class Bot {
   /**
    * @description Executes callback code inside 'message' Event.
    *              - Event: an error occurred while connecting to Slack
+   *
+   * @returns {void}
    */
   public readonly onError = (cb?: Function): void => {
     if (this._bot) {
@@ -74,6 +82,7 @@ class Bot {
 
   /**
    * @description Initialize bot based on bot token and bot name provided through .env variables
+   *
    * @returns {void}
    */
   public readonly initializeBot = (): void => {
@@ -86,6 +95,10 @@ class Bot {
 
   /**
    * @description Creates bot message based on the executions object with the Slack blocks format.
+   *
+   * @param {Array<Execution>} executionsObj Array of executions got from newman summary
+   *
+   * @returns {BotMsg}
    */
   public readonly createBotMsg = (executionsObj: Execution[]): BotMsg => {
     const projectName = process.env.PROJECT_NAME;
@@ -148,8 +161,11 @@ class Bot {
 
   /**
    * @description Checks if data gotten from slack is valid to start the execution
+   *
    * @param data data object from
    * @param bot bot instance
+   *
+   * @returns {Promise<void>}
    */
   public readonly checkDataAndSendMsg = async (data): Promise<void> => {
     if (data.type !== 'message' || data.subtype === 'bot_message' || !data.text) return;
@@ -178,8 +194,11 @@ class Bot {
 
   /**
    * @description Send message to a channel, group or user directly by Id
+   *
    * @param id channel | group | user  - ID
    * @param msg Message to be sent in block formatted mode
+   *
+   * @returns {void}
    */
   public readonly sendMessage = (id: string, msg: BotMsg): void => {
     if (this._bot) {
@@ -193,8 +212,11 @@ class Bot {
 
   /**
    * @description Send message to an user directly in a private conversation
+   *
    * @param user User name
    * @param msg Message to be sent in block formatted mode
+   *
+   * @returns {void}
    */
   public readonly sendMessageToUser = (user: string, msg: BotMsg): void => {
     if (this._bot) {
@@ -209,8 +231,11 @@ class Bot {
 
   /**
    * @description Send message to a channel publicly
+   *
    * @param {string} channel channel name
    * @param {BotMsg} msg Message to be sent in block formatted mode
+   *
+   * @returns {void}
    */
   public readonly sendMessageToChannel = (channel: string, msg: BotMsg): void => {
     if (this._bot) {
@@ -223,6 +248,8 @@ class Bot {
 
   /**
    * @description Throws an error if bot is not initialized
+   *
+   * @returns {Error}
    */
   private readonly botNotInitialized = (): Error => { throw Error('Bot is not initialized'); };
 }

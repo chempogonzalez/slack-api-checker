@@ -9,6 +9,7 @@ import {
 export default class Postman {
   /**
    * @description Creates the final requests objects **(Execution[])** based on executions array
+   *
    * @param executions Param gotten from newman => summary.run.executions
    */
   static readonly createRequestsObjects = (executions: any[]): Execution[] => {
@@ -28,6 +29,7 @@ export default class Postman {
 
   /**
    * @description Creates the object with tests and failedTest for each execution object
+   *
    * @param obj This is a single object from iteration of newman => summary.run.executions
    */
   static readonly getTestsFromAssertionsObj = (obj: ObjectType): TestsFromAssertions => {

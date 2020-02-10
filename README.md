@@ -48,7 +48,7 @@ To set the application configurations to work properly with your project setting
 ```bash
 ├── .env 🔌
 |   ├── POSTMAN_COLLECTION_NAME       # Postman collection file name
-|   ├── POSTMAN_ENVIRONMENTS_NAME     # Postman environment file name
+|   ├── POSTMAN_ENVIRONMENTS_NAME     # Postman environment file name (optional)
 |   ├── SLACK_BOT_TOKEN               # Slack bot user token
 |   ├── SLACK_BOT_NAME                # Bot name to be displayed in Slack
 |   ├── SLACK_BOT_ID                  # Bot user id 
@@ -56,7 +56,11 @@ To set the application configurations to work properly with your project setting
 └──
 ```
 
-### 2️⃣ Install NodeJS Dependencies
+### 2️⃣ Add postman collection and environment
+
+You need to put your **postman collection with tests** and **postman environment files** *(environment file is optional)* in the `assets` folder, which is the folder where the application is going to read the files from.
+
+### 3️⃣ Install NodeJS Dependencies
 
 To work with this project locally, it's necessary to install the NPM dependencies.
 
@@ -65,7 +69,7 @@ To work with this project locally, it's necessary to install the NPM dependencie
 $npm i
 ```
 
-### 3️⃣ Development
+### 4️⃣ Development
 
 To start working locally with the project you will need to execute the following command :
 
@@ -133,7 +137,7 @@ It also exposes all opportunities of **Slack's Real Time Messaging API**.
 
 ## Happy Code
 
-Created with  JavaScript! ⚡ and latin music :
+Created with Typescript! ⚡ and latin music 🎺🎵
 
 ### This README.md file has been written keeping in mind
 
