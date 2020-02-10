@@ -27,6 +27,7 @@ Visual Studio Code Editor configurations and plugins.
 - [Slackbots](https://www.npmjs.com/package/slackbots)
 - [Jest](https://jestjs.io/docs/en/getting-started)
 - [Babel](https://babeljs.io/)
+- [Husky](https://www.npmjs.com/package/husky) - Pre-commit hook
 
 
 ## ✅ Prerequisites
